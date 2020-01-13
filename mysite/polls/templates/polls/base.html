@@ -1,0 +1,33 @@
+{% load static %}
+<!--Add
+    STATICFILES_DIRS = [
+        os.path.join(BASE_DIR, 'statics'),
+    ]  to settings.py-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'polls/bootstrap-4.4.1-dist/css/bootstrap.min.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'polls/css/style.css' %}"/>
+
+
+</head>
+<body>
+<hr>
+<p>Header</p>
+<hr>
+{% include 'polls/header.html' %}
+<div class="jumbotron">
+    <div class="container">
+        {% block main_content %}
+        {% endblock %}
+        {% include 'polls/footer.html' %}
+
+    </div>
+</div>
+
+</body>
+</html>
